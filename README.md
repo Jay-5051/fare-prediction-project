@@ -14,7 +14,6 @@ dropoff_latitude | float for latitude coordinate of where the taxi ride ended.
 passenger_count | integer indicating the number of passengers in the taxi ride
 fare_amount | float dollar amount of the cost of the taxi ride.
 
-
-
+![GitHub Logo](/images/Architecture Diagram.png)
 
 
