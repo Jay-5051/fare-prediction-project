@@ -15,4 +15,5 @@ passenger_count | integer indicating the number of passengers in the taxi ride
 fare_amount | float dollar amount of the cost of the taxi ride.
 
 **Architecture Diagram:-**
+
 ![](images/Architecture%20Diagram.PNG)
