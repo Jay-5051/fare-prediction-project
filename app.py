@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('Fare_LR.h5', 'rb'))
+model = pickle.load(open('Fare_DT.pkl', 'rb'))
 
 @app.route('/')
 def home():
@@ -18,7 +18,7 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 5)
+    output = round(prediction[0], 2)
 
     return render_template('index.html', prediction_text='Taxi Fare Amount should be $ {}'.format(output))
 
