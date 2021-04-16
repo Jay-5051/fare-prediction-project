@@ -9,28 +9,61 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
   
-</head>
+ <style>
+body{
+ background-image: url('taxi.jpeg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ }
+.heighttext{
+    display:inline-block;
+    padding:12px 15px;
+    line-height:140%;
+	background-color: #f8f8ff;
+}
+.heighttext1{
+    display:inline-block;
+    padding:15px 40px;
+	background-color: #e2d810;
+	 font-family: "Times New Roman";
+}
 
-<body>
- <div class="login">
-	<h1>Predict Taxi Fare Amount Analysis</h1>
+ </style>
+</head >
+
+<body  >
+ <div class="login"> 
+ <div  >
+	<h1 align="center"><font color="black" size="35px"> Taxi Fare Prediction </font></h1>
+	</div>
 
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="passenger_count" placeholder="Passenger count" required="required" />
-        <input type="text" name="year" placeholder="Year" required="required" />
-		<input type="text" name="Month" placeholder="Month" required="required" />
-		<input type="text" name="Date" placeholder="Date" required="required" />
-		<input type="text" name="Day" placeholder="Day" required="required" />
-		<input type="text" name="Hour" placeholder="Hour" required="required" />
-		<input type="text" name="distance" placeholder="Distance" required="required" />
+    <form action="{{ url_for('predict')}}"method="post" > 
+	<div class="container">
+	<div class="row" align="center">
+    	 <input type="text" class="heighttext" name="passenger_count" placeholder="Passenger count" required="required" >
+        &emsp; &emsp;<input type="text" class="heighttext" name="year" placeholder="Year" required="required" />
+		&emsp; &emsp;<input type="text" class="heighttext" name="Month" placeholder="Month" required="required" />
+		&emsp; &emsp;<input type="text" class="heighttext" name="Date" placeholder="Date" required="required" />
+			</div>
+			<br>
+			<div class="row" align="center">
+		&emsp; &emsp;&emsp;&emsp;<input type="text" class="heighttext" name="Day" placeholder="Day" required="required" > 
+		&emsp; &emsp;<input type="text" class="heighttext"  name="Hour" min="1" max="24" placeholder="Hour" required="required" />
+		&emsp; &emsp;<input type="text" class="heighttext" name="distance" placeholder="Distance" required="required" />
+        &emsp; &emsp;<button type="submit" class="btn btn-primary btn-block btn-large heighttext1">
+		<font color="black" size="8">PREDICT</font></button>
+		</div>
+		</div>
+		
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
    <br>
+   <font color="black" size="20px">
    {{ prediction_text }}
+   </font>
 
  </div>
 
