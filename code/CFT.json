@@ -10,7 +10,7 @@
             "Type": "String"
         },
         "SubnetId": {
-            "Default": "subnet-7210852d",
+            "Default": "subnet-4112811e",
             "Type": "String"
         },
         "TerminationProtected": {
@@ -27,12 +27,12 @@
         },
         "EMRLogDir": {
             "Description": "Log Dir for the EMR cluster",
-            "Default": "s3://aws-logs-052416061563-us-east-1/elasticmapreduce/",
+            "Default": "s3://aws-logs-468572359302-us-east-1/elasticmapreduce/",
             "Type": "String"
         },
         "KeyName": {
             "Description": "Name of an existing EC2 KeyPair to enable SSH to the instances",
-            "Default": "awskey",
+            "Default": "manish",
             "Type": "String"
         }
     },
@@ -173,9 +173,9 @@
                         "spark-submit",
                         "--deploy-mode",
                         "cluster",
-                        "--conf",
+						"--conf",
                         "spark.sql.catalogImplementation=hive",
-                        "s3://mytesting12/nyc/finalScript.py"
+                        "s3://mynyc1/finalScript.py"
                     ],
                     "Jar": "command-runner.jar"
                 },
